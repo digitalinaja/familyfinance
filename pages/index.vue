@@ -1,6 +1,14 @@
 <template>
     <div>
-        <h1 class="font-sans text-2xl font-extralight underline decoration-sky-500 p-3 mb-5">Family Finance</h1>
+        <div class="flex items-center justify-between p-3 mb-5">
+            <h1 class="font-sans text-2xl font-extralight underline decoration-sky-500">
+                Family Finance
+            </h1>
+    <button @click="handleSignOut" class="place-self-end grid">
+        <LogOutIcon></LogOutIcon>
+    </button>
+</div>
+
         <div class="grid grid-cols-2 gap-2">
             <div>
 
@@ -73,4 +81,15 @@ const notifications = [
     description: '2 hours ago',
   },
 ]
+const supabase = useSupabaseClient()
+const user = useSupabaseUser()
+const handleSignOut = async () => {
+    await supabase.auth.signOut()
+}
+watch(user, () => {
+  if (!user.value) {
+      // Redirect to path
+      return navigateTo('/login'); 
+  }
+}, { immediate: true })
 </script>

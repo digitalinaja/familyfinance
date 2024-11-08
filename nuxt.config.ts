@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
     '@nuxtjs/color-mode',
-    'nuxt-feather-icons'
+    'nuxt-feather-icons',
+    '@nuxtjs/supabase'
   ],
   shadcn: {
     prefix: '',
