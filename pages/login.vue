@@ -62,7 +62,7 @@ const handleSignin = async () => {
     <div class="flex items-center justify-center h-screen">
   <Card class="w-11/12 max-w-md">
     <CardHeader>
-      <CardTitle>Family Finance</CardTitle>
+        <ThemesLogo />
       <CardDescription>Login to App.</CardDescription>
     </CardHeader>
     <CardContent>
@@ -87,6 +87,7 @@ const handleSignin = async () => {
             </span>
             <Loader1 v-if="loading" />
         </Button>
+        <span>Dont have an account? <NuxtLink href="/register" class="underline">Register</NuxtLink></span>
     </CardFooter>
   </Card>
 </div>

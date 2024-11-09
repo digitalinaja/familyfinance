@@ -1,9 +1,7 @@
 <template>
     <div>
         <div class="flex items-center justify-between p-3 mb-5">
-            <h1 class="font-sans text-2xl font-extralight underline decoration-sky-500">
-                Family Finance
-            </h1>
+            <ThemesLogo />
     <button @click="handleSignOut" class="place-self-end grid">
         <LogOutIcon></LogOutIcon>
     </button>
