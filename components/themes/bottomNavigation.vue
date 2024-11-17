@@ -1,14 +1,14 @@
  <template>
   <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-md">
     <div class="flex justify-around items-center h-16">
-      <a href="#home" class="flex flex-col items-center text-gray-600 hover:text-blue-500">
+      <NuxtLink to="/" class="flex flex-col items-center text-gray-600 hover:text-blue-500">
         <HomeIcon class="h-6 w-6" />
         <span class="text-xxs">Home</span>
-      </a>
-      <a href="#search" class="flex flex-col items-center text-gray-600 hover:text-blue-500">
-        <i><SearchIcon class="h-6 w-6" /></i>
+      </NuxtLink>
+      <NuxtLink to="/privateBudget" class="flex flex-col items-center text-gray-600 hover:text-blue-500">
+        <i><PackageIcon class="h-6 w-6" /></i>
         <span class="text-xxs">Budget</span>
-      </a>
+      </NuxtLink>
       <a href="#scan" class="flex flex-col items-center text-gray-600 hover:text-blue-500">
         <apertureIcon class="h-6 w-6" />
         <span class="text-xxs">Create</span>
