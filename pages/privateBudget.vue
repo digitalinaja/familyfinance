@@ -1,11 +1,6 @@
 <template>
     <div>
-        <div class="flex items-center justify-between p-3 mb-5">
-            <ThemesLogo />
-            <button @click="handleSignOut" class="place-self-end grid">
-                <LogOutIcon></LogOutIcon>
-            </button>
-        </div>
+        <ThemesHeaderNavigation />
         <div class="p-3 mb-5">
             <h2 class="mb-2">Budgeting</h2>
                 <!-- Button to open the dialog -->
