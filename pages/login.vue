@@ -87,7 +87,7 @@ const handleSignin = async () => {
             </span>
             <Loader1 v-if="loading" />
         </Button>
-        <span>Dont have an account? <NuxtLink href="/register" class="underline">Register</NuxtLink></span>
+        <span><NuxtLink href="/register" class="underline">Register</NuxtLink></span>
     </CardFooter>
   </Card>
 </div>

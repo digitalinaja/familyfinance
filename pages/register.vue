@@ -126,7 +126,7 @@ const handleRegister = async () => {
             </span>
             <Loader1 v-if="loading" />
         </Button>
-        <span>Already have an account? <NuxtLink to="/login" class="underline">pls welcome</NuxtLink></span>
+        <span><NuxtLink to="/login" class="underline">Login</NuxtLink></span>
     </CardFooter>
   </Card>
 </div>
