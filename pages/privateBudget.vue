@@ -17,28 +17,29 @@
         </div>
         <Dialog :open="isDialogOpen" @close="isDialogOpen = false">
             <DialogContent class="sm:max-w-[425px]">
-            <DialogHeader>
-                <DialogTitle>Add New Budget</DialogTitle>
-            </DialogHeader>
-            <div class="grid gap-4 py-4">
-                <div class="grid grid-cols-4 items-center gap-4">
-                <Label for="name" class="text-right">
-                    Budget
-                </Label>
-                <Input id="budget" v-model="budgetData.budgetName" class="col-span-3" />
+                <DialogHeader>
+                    <DialogTitle>Add New Budget</DialogTitle>
+                </DialogHeader>
+                <div class="grid gap-4 py-4">
+                    <div class="grid grid-cols-4 items-center gap-4">
+                    <Label for="name" class="text-right">
+                        Budget
+                    </Label>
+                    <Input id="budget" v-model="budgetData.budgetName" class="col-span-3" />
+                    </div>
+                    <div class="grid grid-cols-4 items-center gap-4">
+                    <Label for="username" class="text-right">
+                        Monthly Limit
+                    </Label>
+                    <Input id="monthly_limit" v-model="budgetData.budgetLimit" class="col-span-3" />
+                    </div>
                 </div>
-                <div class="grid grid-cols-4 items-center gap-4">
-                <Label for="username" class="text-right">
-                    Monthly Limit
-                </Label>
-                <Input id="monthly_limit" v-model="budgetData.budgetLimit" class="col-span-3" />
-                </div>
-            </div>
-            <DialogFooter>
-                <Button @click=insertBudgetClick>
-                    Save
-                </Button>
-            </DialogFooter>
+                <DialogFooter>
+                    <Button variant="ghost" @click="closeDialog">cancel</Button>
+                    <Button @click=insertBudgetClick>
+                        Save
+                    </Button>
+                </DialogFooter>
             </DialogContent>
         </Dialog>
     </div>
@@ -71,15 +72,22 @@ const isDialogOpen = ref(false);
 const insertBudgetClick = async () => {
     const insert = insertBudget(budgetData.value)
     if(insert) {
-        console.log(newBudget)
+        budgets.value.push(...newBudget.value)
         isDialogOpen.value = false
-        await fetchBudgets()
+        // await fetchBudgets()
+        console.log(budgets.value)
     }
+}
+
+const closeDialog = () => {
+    isDialogOpen.value = false
 }
 
 onMounted(async () => {
   budgetData.value.userId = user.value.id
   await fetchBudgets()
+
+  console.log(budgets)
   // budgets.value.forEach(budget => fetchTransactions(budget.id))
 })
 </script>
